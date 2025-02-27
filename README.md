@@ -1,1 +1,1 @@
-# AlgorithmsFun
+# AlgorithmFun
