@@ -1,28 +1,25 @@
 package BFS;
 
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 import java.util.Set;
 
-public class BFSAlgo extends Graph {
-
-    public BFSAlgo(Node root, Node goal) {
+public class DFSAlgo extends Graph{
+    public DFSAlgo(Node root, Node goal) {
         super(root, goal);
     }
 
-    public BFSAlgo(Node start, Node goal, boolean toPrint) {
+    public DFSAlgo(Node start, Node goal, boolean toPrint) {
         super(start, goal, toPrint);
     }
 
-    public boolean BFS() {
-        Queue<Node> openNodes = new LinkedList<>();
+    public boolean DFS() {
+        Stack<Node> openNodes = new Stack<>();
         Set<Node> visitedNodes = new HashSet<>();
 
-        openNodes.add(this.start);
-
+        openNodes.push(this.start);
         while(!openNodes.isEmpty()) {
-            Node currNode = openNodes.poll();
+            Node currNode = openNodes.pop();
             if(currNode.equals(this.goal)) {
                 if(this.toPrint)
                     System.out.println(currNode.getId() + "\nFound " + currNode.getId() + '!');
