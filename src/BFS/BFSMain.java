@@ -1,6 +1,6 @@
 package BFS;
 
-public class MainBFS {
+public class BFSMain {
     public static void main(String[] args) {
         Node a = new Node("A");
         Node b = new Node("B");
@@ -22,7 +22,8 @@ public class MainBFS {
         e.addChild(g);
         e.addChild(h);
 
-        BFSAlgo.BFS(a,h);
+        BFSAlgo bfs = new BFSAlgo(a, h, true);
+        bfs.BFS();
     }
 
 }
